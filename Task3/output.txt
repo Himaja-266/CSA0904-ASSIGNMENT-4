@@ -1,0 +1,4 @@
+components,gridbag_ns,null_manual_bounds_ns
+100,367700,30400
+1000,1856300,68800
+5000,3938300,165300
