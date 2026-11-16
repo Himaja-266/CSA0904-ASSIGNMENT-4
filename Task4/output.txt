@@ -1,0 +1,16 @@
+WITHOUT @Override
+Compiler exit: 0
+(no diagnostics)
+
+WITH @Override
+Task4\source\OverrideWithAnnotation.java:5: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+1 error
+Compiler exit: 1
+
+BENCHMARK
+points,direct_ns_per_repaint,cache_build_ns,cache_copy_ns_per_repaint,point_est_bytes,image_bytes
+1000,2591900,1175000,736500,28000,4000000
+100000,123928300,120930000,2191400,2800000,4000000
+1000000,1232034000,1114985700,1615500,28000000,4000000
