@@ -1,0 +1,3 @@
+strategy,rows_materialized,median_time_to_first_page_ns,retained_heap_delta_bytes
+all_rows,100000,3613400,7499184
+paged_LIMIT_OFFSET,100,1500,2296
