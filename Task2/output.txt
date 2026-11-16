@@ -1,0 +1,3 @@
+approach,median_ns_per_8_changes,retained_doctor_records
+fetch_each_change,23236800,0
+loaded_map,22300,40
