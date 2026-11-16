@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
@@ -28,6 +29,7 @@ public final class CurrencyConverterNamedInner extends JFrame {
         form.add(result);
         add(form);
         convertButton.addActionListener(handler);
+        amount.addActionListener(handler);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             @Override
@@ -48,12 +50,13 @@ public final class CurrencyConverterNamedInner extends JFrame {
 
     private void convert() {
         try {
-            double value = Double.parseDouble(amount.getText().trim());
-            double converted = value * rate((String) target.getSelectedItem());
-            result.setText(String.format("%.2f %s", converted, target.getSelectedItem()));
+            double v = Double.parseDouble(amount.getText().trim());
+            double out = v * rate((String) target.getSelectedItem());
+            result.setText(String.format("%.2f %s", out, target.getSelectedItem()));
         } catch (NumberFormatException exception) {
             result.setText("Invalid amount");
         }
+        JOptionPane.showMessageDialog(this, result.getText(), "Conversion", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private double rate(String currency) {
